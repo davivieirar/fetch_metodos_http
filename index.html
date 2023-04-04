@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <!-- <script src="/fetch.js"/> -->
+    
+</body>
+</html>
+
+<script>
+// var url=prompt("Informe a URL desejada")
+// var id=prompt("Informe o ID desejado") 
+// var getPosts=async() =>{
+//     let response=await fetch(url+"/"+id);
+//     let data=await response.json();
+    
+//     console.log(data);
+// }
+// getPosts();
+
+var newPosts = async() => {
+
+    const url = prompt("Informe a URL desejada");
+
+    let options = {
+        method: 'POST',
+        body: {
+            title: 'Teste1',
+            body: 'Este é um novo teste1',
+            userId: 5
+        }
+    }
+
+    const header = {
+        'Content-type' : 'application/json; charset=UTF-8'
+    }
+
+    let response = await fetch(url, options, header)
+    let data = await response.json()
+
+    console.log(data)
+}
+newPosts();
+</script>
